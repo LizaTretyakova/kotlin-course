@@ -1,14 +1,26 @@
 package ru.spbau.mit
 
-fun getGreeting(): String {
-    val words = mutableListOf<String>()
-    words.add("Hello,")
-    
-    words.add("world!")
+const val YES: String = "Yes"
+const val NO: String = "No"
 
-    return words.joinToString(separator = " ")
+fun solution(wires: String): String {
+    val inters = mutableListOf<Char>()
+
+    for (w in wires) {
+        if (inters.lastOrNull() == w) {
+            inters.removeAt(inters.lastIndex)
+        } else {
+            inters.add(w)
+        }
+    }
+
+    if (inters.isEmpty()) {
+        return YES
+    }
+    return NO
 }
 
 fun main(args: Array<String>) {
-    println(getGreeting())
+    val input = readLine()
+    println(solution(input!!))
 }

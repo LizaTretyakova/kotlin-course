@@ -4,7 +4,22 @@ import org.junit.Test
 
 class TestSource {
     @Test
-    fun testGreeting() {
-        assertEquals("Hello, world!", getGreeting())
+    fun testSolution0() {
+        assertEquals("Yes", solution("-++-"))
+    }
+
+    @Test
+    fun testSolution1() {
+        assertEquals("No", solution("+-"))
+    }
+
+    @Test
+    fun testSolution2() {
+        assertEquals("Yes", solution("++"))
+    }
+
+    @Test
+    fun testSolution3() {
+        assertEquals("No", solution("-"))
     }
 }
